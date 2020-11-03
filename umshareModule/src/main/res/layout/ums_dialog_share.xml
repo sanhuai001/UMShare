@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ums_shape_top_share_list"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvQQ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="QQ好友"
+            android:textColor="#ff282828"
+            android:textSize="10sp"
+            app:drawableTopCompat="@mipmap/ums_ic_share_qq"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tvQQZone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="QQ空间"
+            android:textColor="#ff282828"
+            android:textSize="10sp"
+            app:drawableTopCompat="@mipmap/ums_ic_qzone"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tvWeChat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="微信好友"
+            android:textColor="#ff282828"
+            android:textSize="10sp"
+            app:drawableTopCompat="@mipmap/ums_ic_share_wx"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tvWeFriends"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="朋友圈"
+            android:textColor="#ff282828"
+            android:textSize="10sp"
+            app:drawableTopCompat="@mipmap/ums_ic_share_friend" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tvClose" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ffc6ccd5"
+        app:layout_constraintBottom_toTopOf="@+id/tvClose" />
+
+    <TextView
+        android:id="@+id/tvClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="取消"
+        android:textColor="#ff282828"
+        android:textSize="14sp" />
+</LinearLayout>

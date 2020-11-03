@@ -1,0 +1,14 @@
+<resources>
+
+    <style name="UMSNormalDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="UMSDialogStyleUpDown" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/ums_dialog_show_anim</item>
+        <item name="android:windowExitAnimation">@anim/ums_dialog_hide_anim</item>
+    </style>
+</resources>

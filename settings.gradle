@@ -1,0 +1,3 @@
+include ':umshareModule'
+include ':app'
+rootProject.name = "UMShare"
