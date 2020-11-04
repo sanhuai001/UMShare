@@ -6,15 +6,6 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
-    signingConfigs {
-        config {
-            keyAlias KEY_ALIAS
-            keyPassword KEY_PASSWORD
-            storeFile file(STORE_FILE)
-            storePassword STORE_PASSWORD
-        }
-    }
-
     defaultConfig {
         applicationId "com.uuabc.samakenglish"
         minSdkVersion 21
@@ -30,9 +21,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 }
