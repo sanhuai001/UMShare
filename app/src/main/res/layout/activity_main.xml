@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ums_ic_share_qq" />
+
     <Button
         android:id="@+id/btnShare"
         android:layout_width="wrap_content"

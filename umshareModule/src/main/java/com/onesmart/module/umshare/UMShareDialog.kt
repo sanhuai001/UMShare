@@ -139,10 +139,14 @@ fun getImage(
 ): UMImage? {
     when (drawable) {
         is Int -> {
-            return UMImage(context, drawable)
+            val image = UMImage(context, drawable)
+            image.setThumb(image)
+            return image
         }
         is Bitmap -> {
-            return UMImage(context, drawable)
+            val image = UMImage(context, drawable)
+            image.setThumb(image)
+            return image
         }
         is String -> {
             return UMImage(context, drawable)
@@ -165,15 +169,15 @@ fun getWeb(
     url: String? = null
 ): UMWeb? {
     if (TextUtils.isEmpty(title) && TextUtils.isEmpty(description)) return null
-    val web: UMWeb? = UMWeb(url)
-    web?.title = title ?: ""
-    web?.description = description ?: ""
+    val web = UMWeb(url)
+    web.title = title ?: ""
+    web.description = description ?: ""
 
     if (drawable == null) return web
     if (drawable is Int) {
-        web?.setThumb(UMImage(context, drawable))
+        web.setThumb(UMImage(context, drawable))
     } else if (drawable is String) {
-        web?.setThumb(UMImage(context, drawable))
+        web.setThumb(UMImage(context, drawable))
     }
     return web
 }

@@ -23,16 +23,13 @@ class UMShareManager {
             }
     }
 
-    fun initUM(context: Context, umConfig: UMConfig) {
-        UMConfigure.init(
-            context,
-            umConfig.umAppKey,
-            "umeng",
-            UMConfigure.DEVICE_TYPE_PHONE,
-            ""
-        )
+    fun initUM(context: Context, umConfig: UMConfig, appId: String) {
+        UMConfigure.init(context, UMConfigure.DEVICE_TYPE_PHONE, "")
+
         PlatformConfig.setWeixin(umConfig.wxAppKey, umConfig.wxAppSecret)
+        PlatformConfig.setWXFileProvider("$appId.FileProvider")
         PlatformConfig.setQQZone(umConfig.qqAppKey, umConfig.qqAppSecret)
+        PlatformConfig.setQQFileProvider("$appId.FileProvider")
     }
 
     fun share(

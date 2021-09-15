@@ -6,6 +6,15 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    signingConfigs {
+        config {
+            keyAlias "uuabckey"
+            keyPassword "uuabc123456"
+            storeFile file('uuabc')
+            storePassword "uuabc123456"
+        }
+    }
+
     defaultConfig {
         applicationId "com.uuabc.samakenglish"
         minSdkVersion 21
@@ -22,6 +31,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            debuggable true
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -37,4 +54,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation project(':umshareModule')
+//    implementation 'com.onesmart.lib:umshare:1.0.0'
 }

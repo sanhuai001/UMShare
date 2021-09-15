@@ -1,6 +1,7 @@
 package com.onesmart.umshare
 
 import android.content.Context
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.onesmart.module.umshare.UMShareManager
@@ -8,13 +9,16 @@ import com.onesmart.module.umshare.bean.UMConfig
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initUM()
 
         btnShare.setOnClickListener {
-            shareImage(this, R.mipmap.ums_ic_share_friend)
+//            shareImage(this, R.mipmap.ums_ic_share_friend)
+
+            UMShareManager.instance.shareImage(this, (ivShare.drawable as BitmapDrawable).bitmap)
 //            share(this,
 //                    "精锐在线少儿“明日之星”卡拉OK大赛等你来挑战",
 //                    "LET’S SING",
@@ -28,12 +32,12 @@ class MainActivity : AppCompatActivity() {
      */
     private fun initUM() {
         val umConfig = UMConfig(
-                "",
-                "",
-                "",
-                "",
-                "")
-        UMShareManager.instance.initUM(this, umConfig)
+            "wx5fdb42ccf553b0a0",
+            "8b6ab876c745d7cfd820617bf65debbb",
+            "101531423",
+            "da8e6f838651cdc52e7e1f7cca6df722"
+        )
+        UMShareManager.instance.initUM(this, umConfig, "com.uuabc.samakenglish")
     }
 
     /**
@@ -48,16 +52,20 @@ class MainActivity : AppCompatActivity() {
      *                      4.	Byte[]    图片byte[]
      *  h5Url        点击H5跳转链接地址
      */
-    private fun share(context: Context,
-                      title: String? = null,
-                      description: String? = null,
-                      drawable: Any? = null,
-                      h5Url: String? = null) {
-        UMShareManager.instance.share(context,
-                title,
-                description,
-                drawable,
-                h5Url)
+    private fun share(
+        context: Context,
+        title: String? = null,
+        description: String? = null,
+        drawable: Any? = null,
+        h5Url: String? = null
+    ) {
+        UMShareManager.instance.share(
+            context,
+            title,
+            description,
+            drawable,
+            h5Url
+        )
     }
 
     /**
